@@ -1,17 +1,17 @@
 # cakephp2-Sugar
-
 應付問題
 
- * 當系統規模變大，個別MODEL要處理其他MODEL的邏輯，
+ * 當系統規模變大，Controller 太多雜務需要處理
+ * 當系統規模變大，MODEL要處理其他MODEL的邏輯，
  * database 邏輯 ，難以重用
- * 處理取自database的資料邏輯，難以重用
+ * 處理database返回的資料的邏輯，難以重用
  * model 過大
 
 責任
 
  * Controller（現有）： 只負責HTTP REQUEST，及選擇／滙入什麼Class去處理
 
- * Service	： 處理常用的雜務，
+ * Service	： 處理Controller常用的雜務，
 
  * Repository	： 負責生成queryObject，
 		    使用不同的query class 把DB邏輯儲存於queryObject內，
