@@ -36,7 +36,7 @@ XXXX 改為你需要的名字，通常對應 Model名
 			$this->PostRepo->getComment01(1);
 ```
 
-###import repository in Service
+### import repository in Service
 ```
     $this->loadRepo('Post');    
 		$this->PostRepo->getComment01(1);
@@ -65,6 +65,45 @@ $obj->q('Post.getHotPost')
 $res = $this->m->find('all',$obj->getArray());  // $htis->m is default model
  
 ```
+### use formatObject
+```
+//init
+$FObj = $this->getFormatObject($res);
 
+// call function
+$FObj->col('Post.col_shortDate','Post.created') 
+/*
+in PostFormat.php
+    function col_shortDate($col){
+        return CakeTime::format($col, '%d-%m-%Y');
+    }
+*/
+$FObj->row('Post.row_formatTitle');
+/*
+in PostFormat.php
+    function row_formatTitle($row){
+        $row['Post']['newTitle']= $row['Post']['title'] .'['.$row['Post']['created'].']';
+        return $row;
+    }
+*/
+$FObj->row('Post.full_detail');
+/*
+in PostFormat.php
+    function full_detail($data){
+      
+      $res = array(
+            'count'=>count($data),
+            'Data'=>$data,
+        );
+        return  $res;
+    }
+*/
+
+$FObj->apply_row()  // run all function added by $FObj->row(...) 
+$FObj->apply_col()  // run all function added by $FObj->col(...) 
+$FObj->apply_full()  // run all function added by $FObj->full(...) 
+
+$FObj->getData()   //return data
+```
 
 
