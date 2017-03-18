@@ -1,5 +1,30 @@
 # cakephp2-Sugar
-mid-scale projects structure
+
+應付問題
+
+ * 當系統規模變大，個別MODEL要處理其他MODEL的邏輯，
+ * database 邏輯 ，難以重用
+ * 處理取自database的資料邏輯，難以重用
+ * model 過大
+
+責任
+
+ * Controller（現有）： 只負責HTTP REQUEST，及選擇／滙入什麼Class去處理
+
+ * Service	： 處理常用的雜務，
+
+ * Repository	： 負責生成queryObject，
+		    使用不同的query class 把DB邏輯儲存於queryObject內，
+		    接擉DB， 取資料 ， 
+		    使用不同的 Format class處理資料後返回給 Service 或 Controller
+		    
+ * Query class	： 負責儲存常用的DB邏輯
+
+ * Format class	： 負責儲存常用的處理資料邏輯
+
+
+
+
 
 ## install
 ```
@@ -44,6 +69,8 @@ XXXX 改為你需要的名字，通常對應 Model名
 
 ### use QueryObject
 ```
+//function in PostRepository.php  
+
 $obj = $this->getQueryObject();
 $obj->q('Post.getHotPost') // will call function getHotPost at PostQuery.php  
 $obj->getArray();  //return cakephp query array
@@ -62,16 +89,18 @@ $obj->q('Post.getHotPost')
     ->q('Post.limit',3)
     ->q('Post.fields','id,title,body');
     
-$res = $this->m->find('all',$obj->getArray());  // $htis->m is default model
+$res = $this->m->find('all',$obj->getArray());  // $htis->m = Repository default model
  
 ```
 ### use formatObject
 ```
-//init
+//function in PostRepository.php  
+
 $FObj = $this->getFormatObject($res);
 
 // call function
-$FObj->col('Post.col_shortDate','Post.created') 
+$FObj->col('Post.col_shortDate','Post.created');
+
 /*
 in PostFormat.php
     function col_shortDate($col){
@@ -86,7 +115,7 @@ in PostFormat.php
         return $row;
     }
 */
-$FObj->row('Post.full_detail');
+$FObj->full('Post.full_detail');
 /*
 in PostFormat.php
     function full_detail($data){
