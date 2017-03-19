@@ -8,9 +8,9 @@
 
 
 
-## AppService.php
-the AppService class is the parent class to all of your Service. 
-AppService itself extends the SuperAppService class included in the Sugar/Vendor/ 
+## AppRepository.php
+the AppRepository class is the parent class to all of your Repository. 
+AppRepository itself extends the SuperAppRepository class included in the Sugar/Vendor/ 
 ```php
 <?php
 App::uses('SuperAppRepository', 'Sugar.Vendor');
