@@ -7,10 +7,13 @@
  * 處理database返回的資料的邏輯，難以重用
  * model 過大
 
-責任
+Sugar分工方式
 
  * Controller（現有）： 只負責HTTP REQUEST，及選擇／滙入什麼Class去處理
-
+ * Model（現有）： 負責儲存CONST
+ 
+ －－－－以下是新加入的－－－
+  
  * Service	： 處理Controller常用的雜務，
 
  * Repository	： 負責生成queryObject，
