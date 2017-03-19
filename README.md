@@ -1,5 +1,5 @@
 # cakephp2-Sugar
-應付問題
+## 應付問題
 
  * 當系統規模變大，Controller 太多雜務需要處理
  * 當系統規模變大，MODEL要處理其他MODEL的邏輯，
@@ -7,7 +7,7 @@
  * 處理database返回的資料的邏輯，難以重用
  * model 過大
 
-Sugar分工方式
+## Sugar分工方式
 
 #### Controller（現有）： 
 * 只負責HTTP REQUEST，及選擇／滙入什麼Class去處理事情，
