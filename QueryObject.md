@@ -9,7 +9,7 @@ $obj = $this->getQueryObject();
 ## Service Methods
 #### QueryObject::q([string],[...])
 * [string] foramt : [QueryClass.functionName] , eg: Post.getLastPost
-* [...]  QueryClass function properly 
+* [...]  QueryClass function param 
 * chain function return QueryObject
 ```php
 //sample
