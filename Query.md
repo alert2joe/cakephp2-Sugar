@@ -37,8 +37,23 @@ App::uses('AppQuery', 'Model/Query');
 
 class PostQuery extends AppQuery {
 
-    public function somefunction(){  
-      //Query logic goes here..
+    public function somefunction(QueryObject $obj){  //first param is QueryObject
+      //Query logic goes here..like below
+      $obj->where(array('Post.id'=>1));
+      $obj->limit(1);
+      $obj->order('Post.id desc');
+      $obj->fields('Post.id ,Post.title');
+      $obj->offset(3);
+      $obj->joins(array(
+        'table' => 'channels',
+        'alias' => 'Channel',
+        'type' => 'LEFT',
+        'conditions' => array(
+            'Channel.id = Item.channel_id',
+        )
+    ));
+    
+      
     }
 }
 ```
