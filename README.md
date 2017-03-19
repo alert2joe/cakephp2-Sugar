@@ -23,17 +23,19 @@ Sugar分工方式
   
 #### Service
 * 處理Controller常用的雜務，
+* 沒有EVENT，只是簡單的處理雜務
 
 #### Repository	： 
 * 負責生成QueryObject，組合Query class的DB邏輯
-* 負責生成FormatObject，組合Format class的處理資料邏輯
+* 接擉DB
+* 負責生成FormatObject，組合Format class去處理資料
 * 返回資料給 Service 或 Controller
 		    
 #### Query class
 * 負責儲存常用的DB邏輯
 
 #### Format class
-* 負責儲存常用的處理資料邏輯
+* 負責儲存常用的資料處理邏輯
 
 
 
@@ -48,9 +50,8 @@ CakePlugin::load('Sugar', array('bootstrap' => true, 'routes' => false));
 public $components = array('Sugar.Sugar');
 ```
 
-Copy code_snippets/Controller/內所有FOLDER 去 Controller folder
-
-Copy code_snippets/Model/內所有FOLDER 去 Model folder
+* 複製 code_snippets/Controller/內所有FOLDER 去 Controller folder
+* 複製 code_snippets/Model/內所有FOLDER 去 Model folder
 
 
 
