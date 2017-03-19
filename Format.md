@@ -3,7 +3,37 @@
 
 ## only use Format in Repository
 ```php
-$obj = $this->getFormatObject();
+$obj = $this->getFormatObject($dbResult);
+/*
+$$dbResult = array(
+               array(
+                  'Post'=>array(
+                           'id'=>1,
+                           'first_name'=>'a',
+                           'last_name'=>b,
+                           'create_date'=>'01-02-2017 23:00:00'
+                  )
+               ),
+               array(
+                  'Post'=>array(
+                           'id'=>1,
+                           'first_name'=>'a',
+                           'last_name'=>b,
+                           'create_date'=>'01-02-2017 23:00:00'
+                  )
+               ),
+               array(
+                  'Post'=>array(
+                           'id'=>1,
+                           'first_name'=>'a',
+                           'last_name'=>b,
+                           'create_date'=>'01-02-2017 23:00:00'
+                  )
+               )
+);
+
+*/
+
 ```
 
 ## FormatObject Methods
