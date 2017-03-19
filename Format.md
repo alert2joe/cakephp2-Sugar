@@ -1,4 +1,4 @@
-# Format
+# Format & FormatObject
 
 
 ## only use Format in Repository
@@ -6,7 +6,7 @@
 $obj = $this->getFormatObject();
 ```
 
-## Format Methods
+## FormatObject Methods
 #### FormatObject::col([string],[targetPath],[...]);
 * [string] foramt : [FormatClass.functionName] , eg: Post.col_shortDate
 * [targetPath] eg :Post.create_date
@@ -55,11 +55,13 @@ class PostFormat extends AppFormat {
 * [string] foramt : [FormatClass.functionName] , eg: Post.col_shortDate
 * [...]  FormatClass function properly 
 * chain function return FormatObject
+
 ```php
 //XXXRepository.php
          $obj = $this->getFormatObject();
          $obj->full('Post.addDetail')
 ```
+
 ```php
 //PostFormat.php
 App::uses('AppFormat', 'Model/Format');
@@ -73,4 +75,25 @@ class PostFormat extends AppFormat {
     } 
 ```
 
+
+
+#### FormatObject::apply_row
+#### FormatObject::apply_col
+#### FormatObject::apply_full
+
+
+```php
+         $FObj = $this->getFormatObject();
+         $FObj->col('XXXXX')
+                  ->col('XXXXX')
+                  ->row('XXXXX')
+                  ->full('XXXXX')
+                  ->full('XXXXX');
+                  
+         $FObj->apply_row()  // run all function added by $FObj->row(...) 
+         ->apply_col()  // run all function added by $FObj->col(...) 
+         ->apply_full()  // run all function added by $FObj->full(...) 
+
+         $FObj->getData()   //return final format data
+```
 
