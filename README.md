@@ -42,6 +42,7 @@
 
 
 ## Install
+copy all files to app/Plugin ,rename to Sugar
 ```
 //bootstrap.php
 CakePlugin::load('Sugar', array('bootstrap' => true, 'routes' => false));
