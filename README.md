@@ -1,5 +1,5 @@
 # cakephp2-Sugar
-## 應付問題
+## 针對問題
 
  * 當系統規模變大，Controller 太多雜務需要處理
  * 當系統規模變大，MODEL要處理其他MODEL的邏輯，
@@ -41,7 +41,7 @@
 
 
 
-## install
+## Install
 ```
 //bootstrap.php
 CakePlugin::load('Sugar', array('bootstrap' => true, 'routes' => false));
@@ -54,7 +54,7 @@ public $components = array('Sugar.Sugar');
 * 複製 code_snippets/Model/內所有FOLDER 去 Model folder
 
 
-# doc
+# Document
 [Repository](https://github.com/alert2joe/cakephp2-Sugar/blob/master/Repository.md)
 
 [Service](https://github.com/alert2joe/cakephp2-Sugar/blob/master/Service.md)
