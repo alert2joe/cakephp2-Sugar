@@ -127,3 +127,68 @@ class PostFormat extends AppFormat {
          $FObj->getData()   //return final format data
 ```
 
+## Format Methods
+#### Format::arrayHasMany
+```php
+         $FObj->full('Post.arrayHasMany',array('Post','Comment','id'));
+         /*
+         Array
+(
+    [0] => Array
+        (
+            [Post] => Array
+                (
+                    [id] => 1
+                    [title] => The title
+                    [Comment] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [id] => 1
+                                    [content] => But I must explain to 
+                                    [post_id] => 1
+                                    [created] => 2017-03-01
+                                )
+
+
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Post] => Array
+                (
+                    [id] => 2
+                    [title] => A title once again
+        
+                    [Comment] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [id] => 3
+                                    [content] => Far far away, behind the word mountains, far from the countries Vokalia and 
+                                    [post_id] => 2
+                                    [created] => 2017-03-01
+                                )
+
+                            [1] => Array
+                                (
+                                    [id] => 4
+                                    [content] => One morning, when Gregor Samsa woke from troubled dreams, he
+                                    [post_id] => 2
+                                    [created] => 2017-03-01
+                                )
+
+                    
+
+                        )
+
+                )
+
+        )
+         */
+         
+```
