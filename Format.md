@@ -192,3 +192,48 @@ class PostFormat extends AppFormat {
          */
          
 ```
+#### Format::arrayHasOne
+```php
+         $FObj->full('Post.arrayHasOne',array('Post','User','id'));
+         /*
+         Array
+(
+    [0] => Array
+        (
+            [Post] => Array
+                (
+                    [id] => 1
+                    [title] => The title
+                    [User] => Array
+                        (
+           
+                            [id] => 2
+                            [name] => raymond
+                                )
+
+
+            
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [Post] => Array
+                (
+                    [id] => 2
+                    [title] => A title once again
+                    [User] => Array
+                        (
+                            [id] => 1
+                            [name] =>joe 
+
+                        )
+
+                )
+
+        )
+         */
+         
+```
