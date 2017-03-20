@@ -29,3 +29,16 @@ $obj = $this->getQueryObject();
             ->q('Post.getLastPost');
          $res = $this->m->find('all',$obj->getArray());
 ```
+#### QueryObject::get($type)
+* return db result,
+* $type param string , default = all 
+* wrap cake find() function all,first,count,list,
+* https://book.cakephp.org/2.0/en/models/retrieving-your-data.html
+
+```php
+//sample
+         $res = $this->getQueryObject()
+                  ->get();
+```
+
+       
