@@ -54,5 +54,16 @@ public $components = array('Sugar.Sugar');
 * 複製 code_snippets/Model/內所有FOLDER 去 Model folder
 
 
+# doc
+[Repository](https://github.com/alert2joe/cakephp2-Sugar/blob/master/Repository.md)
+
+[Service](https://github.com/alert2joe/cakephp2-Sugar/blob/master/Service.md)
+
+[QueryObject](https://github.com/alert2joe/cakephp2-Sugar/blob/master/QueryObject.md)
+
+[Query](https://github.com/alert2joe/cakephp2-Sugar/blob/master/Query.md)
+
+[Format](https://github.com/alert2joe/cakephp2-Sugar/blob/master/Format.md)
+
 
 
