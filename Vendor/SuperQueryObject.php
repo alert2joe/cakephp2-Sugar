@@ -10,6 +10,8 @@ class SuperQueryObject {
     public $_joins = array();
     public $_group = array();
     public $_offset = null;
+    public $_recursive = null;
+    
 
     public function where($cond){
         if(is_array($cond)){
@@ -22,6 +24,8 @@ class SuperQueryObject {
                 
             }
     
+        }else{
+            $this->_where[]=$cond;
         }
         return $this;
     }
@@ -36,11 +40,13 @@ class SuperQueryObject {
         return $this;
     }
     public function offset($num){
-  
         $this->_offset = $num; 
         return $this; 
     }
-    
+    public function recursive($num){
+        $this->_recursive = $num; 
+        return $this; 
+    }
     public function order($cond){
          $this->_add('_order',$cond);
          return $this;
@@ -104,6 +110,10 @@ class SuperQueryObject {
         if($this->_offset !=null){
            $res['offset'] =  $this->_offset;
         }
+        if($this->_recursive !=null){
+           $res['recursive'] =  $this->_recursive;
+        }
+        
         if(!empty($this->_contain)){
            $res['contain'] =  $this->_contain;
         }

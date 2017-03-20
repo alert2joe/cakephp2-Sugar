@@ -1,5 +1,6 @@
 <?php
-App::uses('AppQuery', 'Model/Format');
+App::uses('AppFormat', 'Model/Format');
+
 //Xxxx = model name
 class XxxxFormat extends AppFormat {
 
@@ -8,12 +9,12 @@ class XxxxFormat extends AppFormat {
             return $row;
     }
 
-    function col_YYY($row){
-            return $row;
+    function col_YYY($col){
+            return $col;
     }
 
-    function full_YYY($row){
-            return $row;
+    function full_YYY($full){
+            return $full;
     }
 
 

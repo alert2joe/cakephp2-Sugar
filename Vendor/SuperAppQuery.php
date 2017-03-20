@@ -35,19 +35,31 @@ class SuperAppQuery {
         $fields = implode(",",$cond);
        $obj->fields($fields);
    }
-   public function order($obj,$str){
-       $paths = explode(",",$str);
-       $cond = array();
-        foreach($paths as $k=>$v){
-              $cond[] = $this->mName.'.'.$v;
-        }
-       $obj->order($cond);
+   public function order($obj,$ary){
+   
+       $obj->order($ary);
    }
    public function where($obj,$ary){
        $obj->where($ary);
    }
-
-   public function contain($obj,$ary){
-       $obj->contain($ary);
+   public function joins($obj,$ary){
+       $obj->joins($ary);
    }
+   
+   public function limit($obj,$num){
+       $obj->limit($num);
+   }
+   public function offset($obj,$num){
+       $obj->offset($num);
+   }
+    public function group($obj,$ary){
+   
+       $obj->group($ary);
+   }
+   public function recursive($obj,$num){
+       $obj->recursive($num);
+   }
+   
+   
+
 }
