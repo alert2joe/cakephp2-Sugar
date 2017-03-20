@@ -44,7 +44,7 @@ App::uses('AppRepository', 'Model/Repository');
 class PostRepository extends AppRepository {
 
     public function somefunction(){  
-      //Service logic goes here..
+      //Repository logic goes here..
     }
 }
 ```
