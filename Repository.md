@@ -58,7 +58,7 @@ class PostRepository extends AppRepository {
 
 * return new FormatObject
 
-## Controller Attributes
+## Repository Attributes
 #### Repository::m   [object] (default model)
 #### Repository::mName [string] (default model name)
 #### Repository::mountModel [string] (set default model) eg. 'Post' , 'Comment'
