@@ -12,6 +12,7 @@ class SuperQueryObject {
     public $_offset = null;
     public $_recursive = null;
     
+ 
 
     public function where($cond){
         if(is_array($cond)){
@@ -123,6 +124,12 @@ class SuperQueryObject {
 
     }
 
+
+      function get($m,$type='all'){
+        $ary = $this->getArray();
+        return $m->find($type,$ary);
+
+     }
 
 
 }

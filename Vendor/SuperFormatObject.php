@@ -16,7 +16,7 @@ class SuperFormatObject {
 
     public function init(){
         $args = func_get_args();
-          $path = $args[0];
+        $path = $args[0];
          $paths = explode(".",$path);
          $queryFn    = $paths[1];
          $queryClass = $paths[0].'Format';

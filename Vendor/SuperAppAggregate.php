@@ -1,6 +1,6 @@
 <?php
 
-class SuperAppRepository {
+class SuperAppAggregate {
     
      public function __construct() {
       
