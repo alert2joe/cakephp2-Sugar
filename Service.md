@@ -1,11 +1,10 @@
 # Service
 
 ## setup
-* 建立 Service Folder 於 /app/Controller
-* 建立 AppService.php 於 /app/Controller/Service
+* create Service Folder at /app/Domain
+* create AppService.php at /app/Domain/Service
 
-註：或可複製 Sugar/code_snippets/Controller/Service 到 /app/Controller
-
+Or copy Sugar/code_snippets/Domain/Service to  /app/Domain
 
 
 ## AppService.php
@@ -21,28 +20,28 @@ class AppService extends SuperAppService {
 ```
 
 ## use Service in Controller
-
+Mostly, Repository use in Aggregate , Controller , Repository
 ```php
 public $components = array('Sugar.Sugar');
 ```
 
 ```php
-/*
- /app/Controller/postController
- */
+// will load App/Domain/Service/Main/Abc.php and return instance
+// 'Main' is domain name
 
-  public function view($id) {
-    $this->Sugar->loadService('Post');
-    pr($this->PostService->somefunction());
-  }
+$postService = \SugarLoad::get('Service/Main/Post');
+
+// call Repository function
+$lastPost = $postService->getLastPost();
+     
      
 ```
 ## Service
 ```php
 <?php
-App::uses('AppService', 'Controller/Service');
-
-class PostService extends AppService {
+namespace Domain\Service\Main;
+\SugarLoad::load('Service/AppService');
+class Post extends AppService {
 
     public function somefunction(){  
       //Service logic goes here..
@@ -51,19 +50,9 @@ class PostService extends AppService {
 ```
 
 ## Service Methods
-Service::loadRepo(string $RepositoryName)
-will add $RepositoryName+Repo member
-```php
-    $this->loadRepo('Post');         
-		$this->PostRepo->getComment01(1);
-```
 
-Service::loadService(string $ServiceName)
+## Service Attributes
 
-
-
-## Controller Attributes
-$this->Controller
 
 
 
