@@ -1,10 +1,10 @@
 # Repository
 
 ## setup
-* 建立 Repository Folder 於 /app/Model
-* 建立 AppRepository.php 於 /app/Model/Repository
+* 建立 Repository Folder 於 /app/Domain
+* 建立 AppRepository.php 於 /app/Domain/Repository
 
-註：或可複製 Sugar/code_snippets/Model/Repository 到 /app/Model
+註：或可複製 Sugar/code_snippets/Domain/Repository 到 /app/Domain
 
 
 
@@ -19,27 +19,21 @@ class AppRepository extends SuperAppRepository{
 }
 ```
 
-## use Repository in Controller
+## use Repository in Aggregate
+
 
 ```php
-public $components = array('Sugar.Sugar');
-```
+// will load App/Domain/Repository/Main/Abc.php and return instance
 
-```php
-/*
- /app/Controller/postController
- */
-
-  public function view($id) {
-			$this->Sugar->loadRepo('Post');
-			$this->PostRepo->someFunction(1);
-  }
+$postRepo = \SugarLoad::get('Repository/Main/Abc');
+$lastPost = $postRepo->getLastPost();
      
 ```
 ## Repository
 ```php
 <?php
-App::uses('AppRepository', 'Model/Repository');
+namespace Domain\Repository\Main;
+\SugarLoad::load('Repository/AppRepository');
 
 class PostRepository extends AppRepository {
 
@@ -50,20 +44,9 @@ class PostRepository extends AppRepository {
 ```
 
 ## Repository Methods
-#### Repository::getQueryObject()
 
-* return new QueryObject
-
-#### Repository::getFormatObject()
-
-* return new FormatObject
 
 ## Repository Attributes
-#### Repository::m   [object] (default model)
-#### Repository::mName [string] (default model name)
-#### Repository::mountModel [string] (set default model) eg. 'Post' , 'Comment'
-* if mountModel = 'Comment' , Repository::m = Comment model,
-* if mountModel =  null(default) , Repository::m will depend on Repository Class name , PostRepository will load Post model.
 
 
 
