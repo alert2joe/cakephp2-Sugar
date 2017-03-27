@@ -66,12 +66,15 @@
 copy all files to app/Plugin ,rename to Sugar
 
 
-* 複製 code_snippets/Domain/內所有FOLDER 去 App/Domain
-* 複製 code_snippets/Model/內所有FOLDER 去 Model folder
+* copy code_snippets/Domain/  to App/Domain
+* copy code_snippets/Model/ to Model folder
 
 
 # Document 
 ### 還未整理完成。你或可由UNITTEST 去了解作用。
+
+
+[Aggregate](https://github.com/alert2joe/cakephp2-Sugar/blob/master/Aggregate.md)
 
 [Repository](https://github.com/alert2joe/cakephp2-Sugar/blob/master/Repository.md)
 
