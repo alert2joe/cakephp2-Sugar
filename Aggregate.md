@@ -25,6 +25,7 @@ Mostly, Aggregate use in Aggregate or Controller
 ```php
 
 // will load App/Domain/Aggregate/Main/Abc.php and return instance
+// Main is your new Domain, need to create your own;
 $postAgg = \SugarLoad::get('Aggregate/Main/Abc');
 
 // call Aggregate function
