@@ -1,10 +1,10 @@
 # Repository
 
 ## setup
-* 建立 Repository Folder 於 /app/Domain
-* 建立 AppRepository.php 於 /app/Domain/Repository
+* create Repository Folder at /app/Domain
+* create AppRepository.php at /app/Domain/Repository
 
-註：或可複製 Sugar/code_snippets/Domain/Repository 到 /app/Domain
+or copy Sugar/code_snippets/Domain/Repository 到 /app/Domain
 
 
 
@@ -20,12 +20,14 @@ class AppRepository extends SuperAppRepository{
 ```
 
 ## use Repository in Aggregate
-
+Mostly, Repository use in Aggregate or Service
 
 ```php
-// will load App/Domain/Repository/Main/Abc.php and return instance
 
+// will load App/Domain/Repository/Main/Abc.php and return instance
 $postRepo = \SugarLoad::get('Repository/Main/Abc');
+
+// call Repository function
 $lastPost = $postRepo->getLastPost();
      
 ```
