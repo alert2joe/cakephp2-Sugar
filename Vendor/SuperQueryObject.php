@@ -81,7 +81,6 @@ class SuperQueryObject {
          
          $queryClassInt = SuperAppQuery::Instance($queryClass);
 
- 
          $args[0]= $this;
          call_user_func_array(array($queryClassInt, $queryFn), $args);
          return $this;
