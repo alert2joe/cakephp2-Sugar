@@ -3,7 +3,7 @@
 
 ## only use QueryObject in Repository
 ```php
-$obj = $this->getQueryObject();
+$obj = \SugarLoad::QueryObj();
 ```
 
 ## Service Methods
@@ -13,7 +13,7 @@ $obj = $this->getQueryObject();
 * chain function return QueryObject
 ```php
 //sample
-         $obj = $this->getQueryObject();
+         $obj = \SugarLoad::QueryObj();
 
          $obj->q('Post.join_comments')
             ->q('Post.getLastPost');
@@ -23,13 +23,13 @@ $obj = $this->getQueryObject();
 * return cakephp query array
 ```php
 //sample
-         $obj = $this->getQueryObject();
+        $obj = \SugarLoad::QueryObj();
 
          $obj->q('Post.join_comments')
             ->q('Post.getLastPost');
          $res = $this->m->find('all',$obj->getArray());
 ```
-#### QueryObject::get($type)
+#### QueryObject::get($model,$type)
 * return db result,
 * $type param string , default = all 
 * wrap cake find() function all,first,count,list,
@@ -37,8 +37,12 @@ $obj = $this->getQueryObject();
 
 ```php
 //sample
-         $res = $this->getQueryObject()
-                  ->get();
+         $post = \SugarLoad::Model('Post');
+         $res = \SugarLoad::QueryObj()
+                  ->get($post);
+                  
+        $res = \SugarLoad::QueryObj()
+         ->get($post,'first');
 ```
 
        
