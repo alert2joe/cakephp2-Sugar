@@ -3,7 +3,7 @@
 
 ## only use Format in Repository
 ```php
-$obj = $this->getFormatObject($dbResult);
+$obj  = \SugarLoad::FormatObj($dbResult);
 /*
 $$dbResult = array(
                array(
@@ -44,7 +44,7 @@ $$dbResult = array(
 * chain function return FormatObject
 ```php
 //XXXRepository.php
-         $obj = $this->getFormatObject();
+         $obj = \SugarLoad::FormatObj($dbResult);
          $obj->col('Post.col_shortDate','Post.create_date')
 ```
 ```php
@@ -65,7 +65,7 @@ class PostFormat extends AppFormat {
 * chain function return FormatObject
 ```php
 //XXXRepository.php
-         $obj = $this->getFormatObject();
+         $obj = \SugarLoad::FormatObj($dbResult);
          $obj->row('Post.addFullName')
 ```
 ```php
@@ -88,7 +88,7 @@ class PostFormat extends AppFormat {
 
 ```php
 //XXXRepository.php
-         $obj = $this->getFormatObject();
+         $obj = \SugarLoad::FormatObj($dbResult);
          $obj->full('Post.addDetail')
 ```
 
