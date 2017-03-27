@@ -70,7 +70,8 @@ copy all files to app/Plugin ,rename to Sugar
 * 複製 code_snippets/Model/內所有FOLDER 去 Model folder
 
 
-# Document 還未整理完成。你或可由UNITTEST 去了解作用。
+# Document 
+### 還未整理完成。你或可由UNITTEST 去了解作用。
 
 [Repository](https://github.com/alert2joe/cakephp2-Sugar/blob/master/Repository.md)
 
