@@ -1,10 +1,10 @@
 # Query
 
 ## setup
-* 建立 Query Folder 於 /app/Model
-* 建立 AppQuery.php 於 /app/Model/Query
+* create Query Folder at /app/Model
+* create AppQuery.php at /app/Model/Query
 
-註：或可複製 Sugar/code_snippets/Model/Query 到 /app/Model
+Or just copy Sugar/code_snippets/Model/Query 到 /app/Model
 
 ## AppQuery.php
 the AppQuery class is the parent class to all of your Query. 
@@ -101,11 +101,6 @@ class PostQuery extends AppQuery {
 ```
 
 ## Query Attributes
-#### Query::m   [object] (default model)
-#### Query::mName [string] (default model name)
-#### Query::mountModel [string] (set default model) eg. 'Post' , 'Comment'
-* if mountModel = 'Comment' , Query::m = Comment model,
-* if mountModel =  null(default) , Query::m will depend on Query Class name , PostQuery will load Post model.
 
 
 
