@@ -71,7 +71,7 @@ copy all files to app/Plugin ,rename to Sugar
 
 
 # Document 
-### 還未整理完成。你或可由UNITTEST 去了解作用。
+或可由UNIT TEST 去了解作用。
 
 
 [Aggregate](https://github.com/alert2joe/cakephp2-Sugar/blob/master/Aggregate.md)
